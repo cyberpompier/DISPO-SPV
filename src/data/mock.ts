@@ -1,4 +1,4 @@
-import type { User, Alert } from '../types';
+import type { User, Alert, DayPlanning } from '../types';
 
 export const MOCK_USERS: User[] = [
   {
@@ -63,3 +63,10 @@ export const MOCK_ALERTS: Alert[] = [
     timestamp: 'Il y a 2h'
   }
 ];
+
+export const INITIAL_PLANNING: DayPlanning = {
+  // These will be overridden by localStorage if it exists
+  // We'll populate some example availability for "Next Shift" test
+  "2025-05-15": { jour: 'available', nuit: 'unavailable' },
+  "2025-05-20": { jour: 'unavailable', nuit: 'available' },
+};

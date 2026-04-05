@@ -19,6 +19,8 @@ export const PlanningScreen: React.FC = () => {
   const savePlanning = (newPlanning: DayPlanning) => {
     setPlanning(newPlanning);
     localStorage.setItem('gardeflash_planning', JSON.stringify(newPlanning));
+    // Dispatch storage event for other components in same window
+    window.dispatchEvent(new Event('storage'));
   };
 
   const days = eachDayOfInterval({
