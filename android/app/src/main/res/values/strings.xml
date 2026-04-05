@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">DISPO-SPV</string>
+    <string name="title_activity_main">DISPO-SPV</string>
+    <string name="package_name">com.example.dispospv</string>
+    <string name="custom_url_scheme">com.example.dispospv</string>
+</resources>
