@@ -4,6 +4,7 @@ import { toast } from 'sonner';
 import { Loader2, ShieldCheck, ShieldAlert, Users, Activity } from 'lucide-react';
 import { format, addDays, parseISO, isAfter, startOfDay } from 'date-fns';
 import { INITIAL_PLANNING } from '../data/mock';
+import Badge from '../components/ui/Badge';
 
 import type { DayPlanning, Status } from '../types';
 
@@ -233,7 +234,7 @@ export const HomeScreen: React.FC = () => {
       <section className="flex flex-col gap-6">
         <div className="flex items-center justify-between px-2">
           <h3 className="text-[11px] font-black uppercase tracking-[0.3em] text-text-muted italic">Caserne en Direct</h3>
-          <span className="text-[10px] font-black text-white bg-white/10 px-4 py-1.5 rounded-full border border-white/10">12 ACTIFS</span>
+          <Badge variant="white">12 ACTIFS</Badge>
         </div>
         
         <div className="grid grid-cols-2 gap-5">

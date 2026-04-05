@@ -4,6 +4,7 @@ import { fr } from 'date-fns/locale';
 import { ChevronLeft, ChevronRight, Calendar as CalendarIcon, Clock, Users, X, CheckCircle2, MinusCircle } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { toast } from 'sonner';
+import Badge from '../components/ui/Badge';
 import type { Status, DayPlanning } from '../types';
 
 export const PlanningScreen: React.FC = () => {
@@ -120,8 +121,8 @@ export const PlanningScreen: React.FC = () => {
       </section>
 
       {/* Persistence Info Label */}
-      <div className="text-center">
-        <p className="text-[10px] text-text-muted uppercase tracking-widest font-bold">Sauvegarde locale active</p>
+      <div className="flex justify-center">
+        <Badge variant="muted">Sauvegarde locale active</Badge>
       </div>
 
       {/* Selection Drawer (Custom Implementation for UX) */}

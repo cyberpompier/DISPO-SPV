@@ -2,6 +2,7 @@ import React from 'react';
 import { MOCK_USERS } from '../data/mock';
 import { Shield, Briefcase, History, BarChart3, ChevronRight, Settings } from 'lucide-react';
 import { motion } from 'framer-motion';
+import Badge from '../components/ui/Badge';
 
 export const ProfileScreen: React.FC = () => {
   const me = MOCK_USERS[0];
@@ -31,9 +32,9 @@ export const ProfileScreen: React.FC = () => {
         </div>
         <div className="flex flex-col gap-1">
           <h2 className="text-3xl font-extrabold tracking-tight">{me.name}</h2>
-          <span className="px-4 py-1.5 bg-primary-red/15 text-primary-red rounded-full text-xs font-bold uppercase tracking-widest border border-primary-red/20 inline-block self-center">
+          <Badge variant="primary" className="self-center">
             {me.grade}
-          </span>
+          </Badge>
           <p className="text-text-secondary font-medium">{me.role}</p>
         </div>
       </section>
@@ -67,9 +68,9 @@ export const ProfileScreen: React.FC = () => {
         </h3>
         <div className="flex flex-wrap gap-2">
           {me.specialties?.map(spec => (
-            <span key={spec} className="px-3 py-2 bg-white/5 rounded-xl text-sm font-semibold border border-white/5">
+            <Badge key={spec} variant="muted">
               {spec}
-            </span>
+            </Badge>
           ))}
         </div>
       </section>

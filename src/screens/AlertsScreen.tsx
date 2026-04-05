@@ -1,7 +1,9 @@
 import React from 'react';
-import { AlertCircle, Clock, ChevronRight, TriangleAlert, Info } from 'lucide-react';
+import { Clock, TriangleAlert } from 'lucide-react';
+
 import { MOCK_ALERTS } from '../data/mock';
 import { motion } from 'framer-motion';
+import Badge from '../components/ui/Badge';
 
 export const AlertsScreen: React.FC = () => {
   return (
@@ -12,10 +14,10 @@ export const AlertsScreen: React.FC = () => {
           <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary-red/80">Centre Secours</span>
           <h2 className="text-3xl font-black text-white tracking-tight">Alertes Actives</h2>
         </div>
-        <div className="bg-white/5 h-10 px-4 rounded-2xl flex items-center gap-2 border border-white/5">
+        <Badge variant="danger" className="gap-2">
           <div className="w-2 h-2 bg-primary-red rounded-full animate-pulse" />
-          <span className="text-[11px] font-black text-white">2 LIVE</span>
-        </div>
+          2 LIVE
+        </Badge>
       </div>
 
       {/* Hero Coverage Card */}
@@ -26,7 +28,7 @@ export const AlertsScreen: React.FC = () => {
         <div className="flex flex-col gap-6">
           <div className="flex justify-between items-start">
             <h3 className="text-sm font-bold text-white/70 uppercase tracking-widest leading-none">Capacité Opérationnelle</h3>
-            <span className="text-[10px] font-black bg-white/5 px-3 py-1.5 rounded-full border border-white/10 text-white leading-none">SECTEUR NORD</span>
+            <Badge variant="white">SECTEUR NORD</Badge>
           </div>
           
           <div className="flex items-center gap-8">
@@ -69,11 +71,9 @@ export const AlertsScreen: React.FC = () => {
             
             <div className="flex justify-between items-start">
               <div className="flex flex-col gap-2">
-                <div className={`w-fit px-2.5 py-1 rounded-lg text-[9px] font-black uppercase tracking-widest ${
-                  alert.type === 'critical' ? 'bg-primary-red/20 text-primary-red' : 'bg-white/10 text-white/60'
-                }`}>
+                <Badge variant={alert.type === 'critical' ? 'danger' : 'warning'}>
                   {alert.type}
-                </div>
+                </Badge>
                 <h5 className="text-xl font-bold text-white tracking-tight leading-snug pr-8">{alert.message}</h5>
               </div>
               <div className="flex items-center gap-1.5 text-[10px] font-bold text-text-muted">
